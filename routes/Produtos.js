@@ -8,8 +8,14 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+  const produto = {
+    nome: req.body.nome,
+    preco: req.body.preco,
+  };
+
   res.status(201).send({
-    mensagem: "Pedido POSTADO",
+    mensagem: "Insere um produto",
+    produtoCriado: produto,
   });
 });
 
